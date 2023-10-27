@@ -1,8 +1,8 @@
-FROM fedora
+FROM ubuntu
 # TODO: use openbox instead of xterm < https://fedoramagazine.org/openbox-fedora/
 # TODO: use sice-html5 client < https://fedoraproject.org/wiki/Features/Spice
 
-RUN dnf install -y xorg-x11-drv-qxl xorg-x11-server-Xspice spice-html5 python3-websockify xterm openbox 
+RUN apt install -y xorg-x11-drv-qxl xorg-x11-server-Xspice spice-html5 python3-websockify xterm openbox 
 RUN useradd app && \
     echo "allowed_users=anybody" > /etc/X11/Xwrapper.config && \
     mkdir -p /home/app/.config/openbox/autostart.d/ && \
